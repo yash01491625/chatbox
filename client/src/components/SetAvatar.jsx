@@ -115,9 +115,10 @@ const Container = styled.div`
   align-items: center;
   flex-direction: column;
   gap: 3rem;
-  background-color: #131324;
+  background: linear-gradient(135deg, #1f1f2e, #2e2e47);
   height: 100vh;
   width: 100vw;
+  padding: 2rem;
 
   .loader {
     max-inline-size: 100%;
@@ -126,12 +127,17 @@ const Container = styled.div`
   .title-container {
     h1 {
       color: white;
+      text-align: center;
+      font-size: 2rem;
+      letter-spacing: 1px;
     }
   }
 
   .avatars {
     display: flex;
     gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
 
     .avatar {
       border: 0.4rem solid transparent;
@@ -140,11 +146,15 @@ const Container = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
-      transition: 0.5s ease-in-out;
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(8px);
+      transition: transform 0.3s ease-in-out, border 0.3s ease-in-out;
 
       img {
         height: 6rem;
-        transition: 0.5s ease-in-out;
+        border-radius: 50%;
+        transition: 0.3s ease-in-out;
       }
 
       &:hover {
@@ -161,13 +171,14 @@ const Container = styled.div`
   .submit-btn {
     background-color: #4e0eff;
     color: white;
-    padding: 1rem 2rem;
+    padding: 1rem 2.5rem;
     border: none;
     font-weight: bold;
     cursor: pointer;
-    border-radius: 0.4rem;
+    border-radius: 0.6rem;
     font-size: 1rem;
     text-transform: uppercase;
+    transition: background-color 0.3s ease;
 
     &:hover {
       background-color: #3c0edc;

@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* Smooth corner rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  /* Full-screen glassy gradient background */
+  min-height: 100vh;
+  min-width: 100vw;
+  background: linear-gradient(135deg, #1f1f2e, #2e2e47);
+  color: #e0e0e0;
+  overflow: hidden;
+}
+
+/* Make all buttons and inputs transparent by default; individual styles live in styled-components */
+button,
+input {
+  font-family: inherit;
+  background: transparent;
+  border: none;
+  color: inherit;
+  outline: none;
+}
+
+/* Toastify dark theme override to glass style */
+.Toastify__toast-theme--dark {
+  background: rgba(0, 0, 0, 0.45) !important;
+  backdrop-filter: blur(8px);
+  border-radius: 0.6rem !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5) !important;
+  color: #ffffff !important;
+}
+
+/* Optional: glassy card defaults for any div with .glass class */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Scrollbar styling to match theme */
+::-webkit-scrollbar {
+  width: 0.4rem;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}

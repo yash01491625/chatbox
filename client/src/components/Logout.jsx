@@ -27,13 +27,28 @@ const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  background-color: #9a86f3;
-  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 0.6rem;
+  background: rgba(154, 134, 243, 0.15);
+  border: 1px solid #9a86f3;
+  backdrop-filter: blur(10px);
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 12px rgba(154, 134, 243, 0.2);
+
   svg {
     font-size: 1.3rem;
     color: #ebe7ff;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  &:hover {
+    background: rgba(154, 134, 243, 0.3);
+    box-shadow: 0 6px 16px rgba(154, 134, 243, 0.4);
+
+    svg {
+      transform: scale(1.2);
+    }
   }
 `;
+
