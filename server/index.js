@@ -7,7 +7,11 @@ const app = express();
 const socket = require("socket.io");
 require("dotenv").config();
 
-app.use(cors());
+app.use(cors({
+  origin: "https://chatbox-client.vercel.app",
+  credentials: true,
+}));
+
 app.use(express.json());
 
 mongoose
@@ -36,7 +40,7 @@ const server = app.listen(process.env.PORT, () =>
 );
 const io = socket(server, {
   cors: {
-    origin: "https://chatbox-client.vercel.app/",
+    origin: "https://chatbox-client.vercel.app",
     credentials: true,
   },
 });
