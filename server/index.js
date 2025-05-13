@@ -8,8 +8,8 @@ const socket = require("socket.io");
 require("dotenv").config();
 
 app.use(cors({
-  // origin: "https://chatbox-client.vercel.app",
-  origin: "http://localhost:3000",
+  origin: "https://chatbox-client.vercel.app",
+  // origin: "http://localhost:3000",
   credentials: true,
 }));
 
@@ -41,8 +41,8 @@ const server = app.listen(process.env.PORT, () =>
 );
 const io = socket(server, {
   cors: {
-    // origin: "https://chatbox-client.vercel.app",
-    origin: "http://localhost:3000",
+    origin: "https://chatbox-client.vercel.app",
+    // origin: "http://localhost:3000",
     credentials: true,
   },
 });
