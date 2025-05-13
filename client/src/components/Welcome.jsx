@@ -4,11 +4,24 @@ import Robot from "../assets/robot.gif";
 export default function Welcome() {
   const [userName, setUserName] = useState("");
   useEffect(async () => {
-    setUserName(
-      await JSON.parse(
-        localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)
-      ).username
-    );
+    const check = async () => {
+      const storedData = localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY);
+      if (storedData) {
+        try {
+          const parsedData = JSON.parse(storedData);
+          if (parsedData && parsedData.username) {
+            setUserName(parsedData.username);
+          } else {
+            console.error('Username not found in localStorage data');
+          }
+        } catch (error) {
+          console.error('Error parsing localStorage data', error);
+        }
+      } else {
+        console.error('No data found in localStorage');
+      }
+    }
+    check();
   }, []);
   return (
     <Container>
